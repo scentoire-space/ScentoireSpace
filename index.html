@@ -117,28 +117,23 @@
       padding: 140px 24px 100px;
       position: relative;
       overflow: hidden;
+      background: url('bg.jpg') center center / cover no-repeat;
     }
 
-    /* Ambient glows — mirrors the app paywall backgrounds */
     .hero::before {
       content: '';
       position: absolute;
-      top: -10%;
-      right: -5%;
-      width: 560px;
-      height: 560px;
-      background: radial-gradient(circle, rgba(64,217,255,0.12) 0%, transparent 65%);
+      inset: 0;
+      background: rgba(0,0,0,0.55);
       pointer-events: none;
     }
 
     .hero::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: -5%;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(255,89,115,0.10) 0%, transparent 65%);
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
       pointer-events: none;
     }
 
@@ -149,6 +144,14 @@
       flex-direction: column;
       align-items: center;
       gap: 0;
+    }
+
+    .phone-mockup {
+      width: 220px;
+      border-radius: 36px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 2px rgba(255,255,255,0.1);
+      margin-bottom: 40px;
+      display: block;
     }
 
     .hero-eyebrow {
@@ -472,10 +475,6 @@
   <section class="hero">
     <div class="hero-content">
 
-      <div class="app-icon-lg" style="margin-bottom: 40px;">
-        <img src="scentoire_icon.png" alt="Scentoire" />
-      </div>
-
       <p class="hero-eyebrow">AI Emotional Companion</p>
 
       <h1>Feel <span class="accent-cyan">seen</span>. Feel <span class="accent-pink">held</span>.<br />Feel guided.</h1>
@@ -494,6 +493,11 @@
 
     </div>
   </section>
+
+  <!-- APP PREVIEW -->
+  <div style="display:flex; justify-content:center; margin-top:-60px; position:relative; z-index:10; padding-bottom:60px;">
+    <img src="app_screenshot.png" alt="Scentoire app" class="phone-mockup" />
+  </div>
 
   <!-- WHAT IT IS -->
   <div class="what">
